@@ -7,3 +7,4 @@
 # How to build
 
 - Used MealDB API link ( https://www.themealdb.com/api.php)
+- Use the command of "python3 -m http.server 3000" to run it and navigate website through (http://localhost:3000/index.html)

@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
   <title>DishCreationHub</title>
 </head>
 
@@ -21,10 +23,33 @@
     type in the name of the recipe you want to search
     <div class="box">
       <input type="text" id="search" placeholder="Enter a food to search for" />
-      <button type="submit" class="search-btn btn " id="searchBtn">Search</button>
+      <button py-click="generate_recipe()" type="submit" class="search-btn btn " id="searchBtn">Search</button>
+    </div>
+    <div class="meal-result">
+      <h2 class="title">Your Search Results:</h2>
+      <div id="meal">
+
+      </div>
+    </div>
+
+
+    <div class="meal-details">
+      <!-- recipe close btn -->
+      <button type="button" class="btn recipe-close-btn" id="recipe-close-btn">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <!-- meal content -->
+      <div class="meal-details-content">
+
+      </div>
     </div>
   </main>
+  <py-config>
+    packages = ["requests", "pyodide_http"]
+  </py-config>
+  <py-script src="recipe.py"></py-script>
 </body>
-<script src="recipe.js"></script>
+
 
 </html>
